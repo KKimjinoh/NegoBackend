@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c9ca8d00.css",
+    "main.js": "/static/js/main.2f2e845c.js",
+    "static/media/Shakehand.png": "/static/media/Shakehand.5db4d4db977e78168ca7.png",
+    "static/media/pantiman.png": "/static/media/pantiman.acdae60a11daac77d6c7.png",
+    "index.html": "/index.html",
+    "main.c9ca8d00.css.map": "/static/css/main.c9ca8d00.css.map",
+    "main.2f2e845c.js.map": "/static/js/main.2f2e845c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9ca8d00.css",
+    "static/js/main.2f2e845c.js"
+  ]
+}

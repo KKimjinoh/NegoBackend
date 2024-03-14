@@ -44,12 +44,11 @@ public class Auth_service {
         if (memberRepository.existsByEmail(memberRequestDto.getEmail())) {
             throw new RuntimeException("이미 가입되어 있는 이메일입니다.");
         }
-
+        log.info("회원가입 메소드 들어옴");
         Authority authority = authorityRepository
                 .findByAuthorityStatus(AuthorityEnum.ROLE_USER).orElseThrow(()->new RuntimeException("권한 정보가 없습니다."));
         Set<Authority> set = new HashSet<>();
         set.add(authority);
-
         Member member = memberRequestDto.toMember(passwordEncoder, set);
         return Member_response_dto.of(memberRepository.save(member));
     }

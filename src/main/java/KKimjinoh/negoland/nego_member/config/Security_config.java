@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -49,8 +50,19 @@ public class Security_config extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 //HttpServletRequest를 사용하는 요청들에 대한 접근 제한 설정
-                .antMatchers("/members/sign-up","/members/login").permitAll();
+                .antMatchers("/members/sign_up").permitAll()
+                .antMatchers("/members/login").permitAll()
+                .antMatchers("/static/**").permitAll()
+                .antMatchers("/").permitAll()
+                .antMatchers("/css/**").permitAll()
+                .antMatchers("/js/**").permitAll()
+                .antMatchers("/media/**").permitAll()
 
                 //위 api는 인증 없이 접근 허용
+                .and()
+                .csrf()
+                .ignoringAntMatchers("/members/sign_up")
+                .ignoringAntMatchers("/members/login");
+                //csrf 무시
     }
 }

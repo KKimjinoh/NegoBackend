@@ -3,10 +3,12 @@ package KKimjinoh.negoland.nego_member.config;
 import KKimjinoh.negoland.nego_member.jwt.Jwt_authentication_filter;
 import KKimjinoh.negoland.nego_member.jwt.Jwt_token_provider;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.DefaultSecurityFilterChain;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 // TokenProvider, RedisTemplate, JwtFilter를 SecurityConfig 에 적용할 때 사용
